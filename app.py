@@ -43,6 +43,6 @@ elif option == "Video":
 
             results = model.predict(frame)
             annotated_frame = results[0].plot()
-            stframe.image(annotated_frame, channels="BGR", use_column_width=True)
+            stframe.image(annotated_frame, channels="BGR", use_container_width=True)
 
         cap.release()
