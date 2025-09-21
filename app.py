@@ -5,7 +5,7 @@ import numpy as np
 from ultralytics import YOLO
 
 # Load the YOLO model
-model = YOLO("best.pt")
+model = YOLO("model.pt")
 
 st.title("Spitting Detection System")
 st.markdown("Upload an image, video, or use webcam to see spitting detection in action!")

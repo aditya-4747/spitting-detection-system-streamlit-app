@@ -12,7 +12,7 @@ st.markdown("Live feed from your webcam with detection results side by side.")
 # Load the YOLO model
 @st.cache_resource
 def load_model():
-    model = YOLO("spit-detection.pt")
+    model = YOLO("model.pt")
     return model
 
 model = load_model()
