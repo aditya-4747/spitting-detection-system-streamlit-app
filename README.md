@@ -6,7 +6,7 @@ An AI-powered computer vision system that detects spitting behavior in images an
 
 ## ✨ Key highlights
 - **Dataset:** 755 images, **983 annotated instances** (492 spitting, 491 non-spitting) after augmentation.
-- **Model:** Ultralytics **YOLOv8-M** (final), trained for **50 epochs** on Google Colab (T4 GPU).
+- **Model:** Ultralytics **YOLOv8-L** (final), trained for **50 epochs** on Google Colab (T4 GPU).
 - **Metrics:** **Precision 99.20%**, **Recall 99.90%**, **F1 99.54%**, **mAP@50 99.50%**, **Accuracy (instance-level) 98.19%**.
   - *Note:* mAP@50 / precision / recall are primary object-detection metrics. The reported accuracy is an additional instance-level binary metric derived from the YOLO confusion matrix for interpretability.
 - **Deployment:** Streamlit Cloud (image/video upload or webcam capture interface).
@@ -50,7 +50,7 @@ An AI-powered computer vision system that detects spitting behavior in images an
 
 ## 🧪 Model training (summary)
 - Experiments conducted across YOLO variants (v5, v8, v9, v11), multiple annotation strategies and dataset variants.
-- Final model: **YOLOv8-M** selected based on validation performance.
+- Final model: **YOLOv8-L** selected based on validation performance.
 - Training setup (final run):
   - Epochs: **50**
   - Optimizer / params: default Ultralytics settings (AdamW, lr=0.001, batch=16)
@@ -113,6 +113,7 @@ streamlit run ./real-time/local_app.py
 [**Aditya Maddeshiya**](https://github.com/aditya-4747)
 
 ---
+
 
 
 
