@@ -28,7 +28,7 @@ An AI-powered computer vision system that detects spitting behavior in images an
 ---
 
 ## 🧰 Tech stack
-- **Model & Training:** Ultralytics YOLOv8 (PyTorch)
+- **Model & Training:** Ultralytics YOLOv8 (PyTorch based)
 - **Inference / CV:** OpenCV, NumPy
 - **Frontend / Demo:** Streamlit
 - **Annotation:** LabelImg (manual annotations)
@@ -37,7 +37,7 @@ An AI-powered computer vision system that detects spitting behavior in images an
 
 ---
 
-## 📥 Dataset & preprocessing (what I did)
+## 📥 Dataset & preprocessing
 - Collected and curated **755 images** with **983 instances** (spitting vs non-spitting).
 - Manual annotation for every instance using **LabelImg** (including augmented images).
 - Image normalization to **640 × 640 px** for training consistency.
@@ -113,6 +113,7 @@ streamlit run ./real-time/local_app.py
 [**Aditya Maddeshiya**](https://github.com/aditya-4747)
 
 ---
+
 
 
 
