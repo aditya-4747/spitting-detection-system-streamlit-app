@@ -7,6 +7,7 @@ An AI-powered computer vision system that detects spitting behavior in images an
 ## ✨ Key highlights
 - **Dataset:** 755 images, **983 annotated instances** (492 spitting, 491 non-spitting) after augmentation.
 - **Model:** Ultralytics **YOLOv8-L** (final), trained for **50 epochs** on Google Colab (T4 GPU).
+- **Metrics:** mAP50 came over 92%.
 - **Deployment:** Streamlit Cloud (image/video upload or webcam capture interface).
 
 ---
