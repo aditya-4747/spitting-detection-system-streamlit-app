@@ -1,20 +1,37 @@
 import streamlit as st
 from ultralytics import YOLO
 import cv2
-import numpy as np
+import os
+import requests
 import time
+
+# Download model locally
+MODEL_URL = "https://github.com/aditya-4747/spitting-detection-system/releases/download/v1.0-model/spitting_detection_model.pt"
+MODEL_PATH = "model/spitting_detection_model.pt"
+
+@st.cache_resource
+def load_model():
+    if not os.path.exists(MODEL_PATH):
+        os.makedirs("model", exist_ok=True)
+
+        with st.spinner():
+            r = requests.get(MODEL_URL, stream=True, timeout=60)
+            r.raise_for_status()
+            with open(MODEL_PATH, "wb") as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    f.write(chunk)
+
+    model = YOLO(MODEL_PATH)
+    return model
+
 
 # Page configuration
 st.set_page_config(page_title="Real-Time Spitting Detection", layout="wide")
 st.title("🎥 Real-Time Spitting Detection with YOLO")
 st.markdown("Live feed from your webcam with detection results side by side.")
 
-# Load the YOLO model
-@st.cache_resource
-def load_model():
-    model = YOLO("../model_v8L.pt")
-    return model
 
+# Load the YOLO model
 model = load_model()
 
 # Start detection button
